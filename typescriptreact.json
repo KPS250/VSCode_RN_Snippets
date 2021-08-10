@@ -1,0 +1,174 @@
+{
+    "Functional Component": {
+		"prefix": "fc",
+		"body": [
+		  "import React,{useState} from 'react';",
+		  "import {View, Text} from 'react-native';",
+		  "import EStyleSheet from 'react-native-extended-stylesheet';",
+		  "import {Colors} from '../../../values/Colors';",
+		  "import {Fonts} from '../../../values/Fonts';",
+		  "import {Icons} from '../../../values/Icons';",
+		  "",
+		  "type PropTypes = {",
+		  "  style?: StyleMedia;",
+		  "};",
+		  "",
+		  "const $0 = (props: PropTypes) => {",
+		  "  const [count, setCount] = useState<number>(0);",
+		  "  const {style = {}} = props;",
+		  "  return (",
+		  "    <View style={styles.container}>",
+		  "      <Text>{count}</Text>",
+		  "    </View>",
+		  "  );",
+		  "};",
+		  "",
+		  "export default $0;",
+		  "",
+		  "const styles = EStyleSheet.create({",
+		  "  container: {},",
+		  "});",
+		  ""
+		],
+		"description": "Functional Component"
+	  },
+    "Redux Functional Component": {
+      "prefix": "rfc",
+      "body": [
+        "import React, {useState} from 'react';",
+        "import {View, Text} from 'react-native';",
+        "import EStyleSheet from 'react-native-extended-stylesheet';",
+        "import {Colors} from '../../../values/Colors';",
+        "import {Fonts} from '../../../values/Fonts';",
+        "import {Icons} from '../../../values/Icons';",
+        "import {connect} from 'react-redux';",
+        "import SafeArea from '../../commons/components/SafeArea';",
+        "",
+        "type PropTypes = {",
+        "  style?: StyleMedia;",
+        "};",
+        "",
+        "const $0 = (props: PropTypes) => {",
+        "  const [count, setCount] = useState<number>(0);",
+        "  const {style = {}} = props;",
+        "  return (",
+        "    <SafeArea>",
+        "      <View style={styles.container}>",
+        "        <Text>{count}</Text>",
+        "      </View>",
+        "    </SafeArea>",
+        "  );",
+        "};",
+        "",
+        "const mapStateToProps = (state) => {",
+        "  return {",
+        "    //errorState: state.commonReducer,",
+        "  };",
+        "};",
+        "",
+        "const mapDispatchToProps = {",
+        "  //noInternet,",
+        "};",
+        "",
+        "export default connect(mapStateToProps, mapDispatchToProps)($0);",
+        "",
+        "const styles = EStyleSheet.create({",
+        "  container: {},",
+        "});",
+        ""
+      ],
+      "description": "Redux Functional Component"
+    },
+      "Style File": {
+        "prefix": "style",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact",
+        "body": [
+          "import EStyleSheet from 'react-native-extended-stylesheet';",
+          "",
+          "export const $0Styles = EStyleSheet.create({",
+          "    container: {",
+          "      flex: 1,",
+          "    },",
+          "});"
+        ],
+        "description": "Style File"
+      },
+      "ActionType File": {
+        "prefix": "actyp",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact",
+        "body": [
+          "export const ActionTypes = {",
+          "    //'sample': 'sample',",
+          "}"
+        ],
+        "description": "Action Types"
+      },
+      "Action": {
+        "prefix": "act",
+        "body": [
+          "export const $0 = (payload) => ({",
+          "     type: ActionTypes.$0, ",
+          "     payload:payload ",
+          "})"
+        ],
+        "description": "Action"
+      },
+      "Reducer File": {
+        "prefix": "red",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact",
+        "body": [
+          "import { ActionTypes } from \"./ActionTypes\"",
+          "",
+          "const initialState = {",
+          "  ",
+          "}",
+          "",
+          "export const $0Reducer = (state = initialState, action)=>{",
+          "    switch(action.type)",
+          "    {",
+          "        case ActionTypes.$0:",
+          "            return {...state, ...{$0: action.payload}}",
+          "       ",
+          "    }",
+          "    return state",
+          "}"
+        ],
+        "description": "Reducer File"
+      },
+      "API Request": {
+        "prefix": "apiCall",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact",
+        "body": [
+          "export const $0 = (data)=> {",
+          "    let key = '$0';",
+          "    let mergeData = [...data]",
+          "    return (dispatch) => {",
+          "      axiosInstance.post(Urls.uri, getFormBody(mergeData)).then(result => {",
+          "        const success = !result.data.error",
+          "        console.log(key, result);",
+          "        if (success) {",
+          "          //dispatch(action(data));",
+          "        }",
+          "      }).catch(error => {",
+          "         console.log( key ,error);",
+          "      })",
+          "    }",
+          " };"
+        ],
+        "description": "API Request"
+      },
+      "Text Style": {
+        "prefix": "txts",
+        "body": [
+          "$0: {",
+          "    fontFamily: Fonts.regular,",
+          "    fontSize: '12rem',",
+          "    color: Colors.black,",
+          "    letterSpacing: '0rem',",
+          "    lineHeight: '0rem',",
+          "  },"
+        ],
+        "description": "Text Style"
+      },
+   
+}
